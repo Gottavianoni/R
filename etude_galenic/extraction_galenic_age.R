@@ -1,6 +1,6 @@
 #SCRIPT POUR CRITERES
-Sys.setenv(http_proxy="http://ottavig:Pierre-Fabre02@proxy1:8080")
-Sys.setenv(https_proxy="http://ottavig:Pierre-Fabre02@proxy1:8080")
+Sys.setenv(http_proxy="*****")
+Sys.setenv(https_proxy="*****")
 Sys.setenv(encoding = "UTF-8")
 
 if(!exists('liste_produit_conc_filtre')) liste_produit_conc_filtre <- NULL
