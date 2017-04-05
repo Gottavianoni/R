@@ -20,7 +20,7 @@ conc2 <- "http://www.beaute-test.com/oenobiol_solaire_intensif__oenobiol.php"
 conc2 <- "http://www.beaute-test.com/2_en_1_nettoyant_et_masque_-_visibly_clear_neutrogena.php"
 #---------------------------------------------
 
-prox <- use_proxy(url = "proxy1",port = 8080,username = "ottavig", password = "Pierre-Fabre01")
+prox <- use_proxy(url = "*****",port = "*****",username = "*****", password = "*****")
 agent <- user_agent("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)")
 
 #trouver la gamme a partir du produit
@@ -74,7 +74,7 @@ for(i in 1:nombre_pages) {
 #Recup de tous les avis d'un produit
 
 print(paste("La note moyenne de la gamme est : ",moy,sep=""))
-print(paste("Le taux d avis defavorable est estim� � ", tx," %",sep=""))
+print(paste("Le taux d avis defavorable est estimé à ", tx," %",sep=""))
 
 source("~/Stats/beaute_test_avis_marque.R")
 avis_pf <- prod
@@ -105,7 +105,7 @@ table(avis$nomproduit)
 avis_conc <- avis[avis$nomproduit == "traitement_ventre_et_hanches__somatoline_cosmetic",]
 avis_pf <- avis[avis$nomproduit == "cellu_slim_elancyl",]
 
-#base de donn�es complete avis, et utilisateurs
+#base de données complete avis, et utilisateurs
 avis_pf$ens <- "pf"
 avis_conc$ens <- "conc"
 avis_cons <- rbind(avis_pf,avis_conc)
@@ -114,7 +114,7 @@ for (col in names(avis_cons)) avis_cons[,col] <- as.character(avis_cons[,col])
 avis_cons <- merge(avis_cons,pers_desc,by.x= "pseudo_avis",by.y = "nom",all.x=T)
 
 for (col in names(avis_pf)) avis_pf[,col] <- as.character(avis_pf[,col])
-#cr�ation des ratios et moyennes PF
+#création des ratios et moyennes PF
 for (col in names(avis_pf)[5:12]){
 moy <- mean(as.numeric(substr(avis_pf[,col],1,1)),na.rm = T)
 assign(paste("pf",col,sep=""),moy)
@@ -136,7 +136,7 @@ pfratio <- length(avis_pf[which(avis_pf$ratio > 2.5),1])/ length(avis_pf[,1]) * 
 #Concurrents
 avis_conc <- rbind(avis_conc_1,avis_conc_2)
 avis_conc <- avis_cons[avis_cons$ens == "conc",]
-#cr�ation des ratios et moyennes conc
+#création des ratios et moyennes conc
 for (col in names(avis_conc)[5:13]){
   moy <- mean(as.numeric(substr(avis_conc[,col],1,1)),na.rm = T)
   assign(paste("conc",col,sep=""),moy)
@@ -189,7 +189,7 @@ View(table(substr(avis_pf$date_ins,7,8)))
 
 
 for (col in names(produit)) produit[,col] <- as.character(produit[,col])
-#cr�ation des ratios et moyennes PF
+#création des ratios et moyennes PF
 for (col in names(produit)[5:13]){
   #moy <- mean(as.numeric(substr(produit[,col],1,1)),na.rm = T)
   #assign(paste("tot",col,sep=""),moy)
@@ -260,20 +260,20 @@ avis <- read.csv2("C:/Documents and Settings/ottavig/Bureau/Concurrence_P_Collet
 
 for (col in names(avis)) avis[,col] <- as.character(avis[,col])
 for (col in names(avis)) {
-  avis[,col] <- gsub("è","e",avis[,col],fixed = T)
-  avis[,col] <- gsub("ô","o",avis[,col],fixed = T)
-  avis[,col] <- gsub("é","e",avis[,col],fixed = T)
-  avis[,col] <- gsub("î","i",avis[,col],fixed = T)
-  avis[,col] <- gsub("ç","c",avis[,col],fixed = T)
-  avis[,col] <- gsub("ê","e",avis[,col],fixed = T)
-  avis[,col] <- gsub("â", "a",avis[,col],fixed = T)
-  avis[,col] <- gsub("û", "u",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ã¨","e",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ã´","o",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ã©","e",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ã®","i",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ã§","c",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ãª","e",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ã¢", "a",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ã»", "u",avis[,col],fixed = T)
   avis[,col] <- gsub("(\n)", " ",avis[,col],perl = T)
   avis[,col] <- gsub("(\r)", " ",avis[,col],perl = T)
   avis[,col] <- gsub('(\")', " ",avis[,col],perl = T)
   avis[,col] <- gsub('(")', " ",avis[,col],perl = T)
-  avis[,col] <- gsub("�", "a",avis[,col],fixed = T)
-  avis[,col] <- gsub("�", "",avis[,col],fixed = T)
+  avis[,col] <- gsub("Ã", "a",avis[,col],fixed = T)
+  avis[,col] <- gsub("Â", "",avis[,col],fixed = T)
 }
 
 write.csv2(avis,"C:/Documents and Settings/ottavig/Bureau/Concurrence_P_Collet/Dexeryl/dexeryl_concurrents.csv",row.names = F)
