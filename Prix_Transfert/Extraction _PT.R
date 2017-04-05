@@ -1,5 +1,5 @@
 library(RODBC)
-rov <- odbcConnect(dsn = "REF_PROD_COSMETO",uid = "esbguest",pwd = "esbguest")
+rov <- odbcConnect(dsn = "*****",uid = "*****",pwd = "*****")
 
 dt1 <- "{ts '2012-01-01 00:00:00'}"
 dt2 <- "{ts '2013-01-01 00:00:00'}"
