@@ -5,7 +5,7 @@ code_pays <- c("989","960","957","999","998","997","995","996","991","992","990"
 filiale <-   c("006","010","014","024","025","026","027","029","030","034","049","053","061","064","066","067","070","071","073","079","081","301","303","305","306","308","312")
 
 library(RODBC)
-rov <- odbcConnect(dsn = "ODS_PROD_HOLDING",uid = "utlboe",pwd = "boeutl")
+rov <- odbcConnect(dsn = "*****",uid = "*****",pwd = "*****")
 
 query <- ("SELECT S.COFLL,S.AA, S.MM, SUM(QTSTKREE) as QTE, SUM(VLACH) as STOCK_VAL, SUM(VLFRSAPH) as FRAIS_APPROCHE, sum(VLAJTLCA) as VALEUR_AJ, sum(VLPVSDPCLCA) as PROVISIONS 
 FROM ADMODS.D_STKMRGINT_ODS S
