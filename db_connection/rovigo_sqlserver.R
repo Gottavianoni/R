@@ -1,8 +1,8 @@
 #ATTAQUER BASE ROVIGO SQLSERVER
 
 library(RODBC)
-rov <- odbcConnect("ROVIGO_POWERPIVOT")
-rov <- odbcConnect(dsn = "REF_PROD_COSMETO",uid = "esbguest",pwd = "esbguest",rows_at_time = 500)
+rov <- odbcConnect("*****")
+rov <- odbcConnect(dsn = "*****",uid = "*****",pwd = "*****",rows_at_time = 500)
 
 library(RJDBC)
 
