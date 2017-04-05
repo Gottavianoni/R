@@ -20,7 +20,7 @@ for(club in tournois) {
 club <- gsub("\\s","%20",club)
 
 #ESPACE %20
-phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe",extra = "--proxy-auth=ottavig:Pierre-Fabre03 --proxy=proxy1:8080")
+phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe",extra = "--proxy-auth=***** --proxy=*****")
 remDr <- remoteDriver(browserName = "phantomjs")
 remDr$open()
 url <- paste0("https://www.easports.com/iframe/fifa16proclubs/PS4/",club)
