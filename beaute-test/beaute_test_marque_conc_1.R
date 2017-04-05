@@ -12,7 +12,7 @@ library(rvest)
 marque <- "laboratoires_pierre_fabre"
 #----------------------------------------------
 
-prox <- use_proxy(url = "proxy1",port = 8080,username = "ottavig", password = "Pierre-Fabre01")
+prox <- use_proxy(url = "*****",port = "*****",username = "*****", password = "*****")
 agent <- user_agent("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)")
 
 #Pour une marque
