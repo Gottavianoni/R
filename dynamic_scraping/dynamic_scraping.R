@@ -25,12 +25,12 @@ remDr$goForward()
 
 remDr$goBack()
 
-proxy <- "http://advmalb:2Deploi$3Cde@proxy1:8080"
-proxy <- "http://ottavig:Pierre-Fabre03@proxy1:8080"
+proxy <- "*****"
+proxy <- "*****"
 
 require(RSelenium)
 require(rvest)
-phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe",extra = "--proxy-auth=ottavig:Pierre-Fabre03 --proxy=proxy1:8080")
+phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe",extra = "--proxy-auth=***** --proxy=*****")
 remDr <- remoteDriver(browserName = "phantomjs")
 remDr$open()
 remDr$navigate("http://www.ordre.pharmacien.fr/annuaire/pharmacien")
@@ -57,7 +57,7 @@ remDr$stop()
  
 #FINESS
 
-phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe", extra = "--proxy-auth=ottavig:Pierre-Fabre02 --proxy=proxy1:8080")
+phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe", extra = "--proxy-auth=***** --proxy=*****")
 remDr <- remoteDriver(browserName = "phantomjs")
 remDr$open()
 remDr$navigate("http://finess.sante.gouv.fr/jsp/index.jsp")
@@ -71,7 +71,7 @@ elt2 <- remDr$findElement(using = "css selector", value = "")
 elt$clickElement()
 
 #CNOM
-phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe", extra = "--proxy-auth=ottavig:Pierre-Fabre02 --proxy=proxy1:8080")
+phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe", extra = "--proxy-auth=***** --proxy=*****")
 remDr <- remoteDriver(browserName = "phantomjs")
 remDr$open()
 remDr$navigate("http://finess.sante.gouv.fr/jsp/index.jsp")
@@ -99,7 +99,7 @@ elt$submitElement()
 Sys.setenv(http_proxy = '')
 require(RSelenium)
 require(rvest)
-phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe",extra = "--proxy-auth=ottavig:Pierre-Fabre03 --proxy=proxy1:8080")
+phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe",extra = "--proxy-auth=***** --proxy=*****")
 remDr <- remoteDriver(browserName = "phantomjs")
 remDr$open()
  
