@@ -2,18 +2,18 @@
 library(rvest)
 load("C:/Users/ottavig/Documents/docti_membre.RData")
 
-Sys.setenv(http_proxy="http://ottavig:Pierre-Fabre02@proxy1:8080")
-Sys.setenv(https_proxy="http://ottavig:Pierre-Fabre02@proxy1:8080")
+Sys.setenv(http_proxy="*****")
+Sys.setenv(https_proxy="*****")
 Sys.setenv(encoding = "UTF-8")
 
 if (!exists("uti")){
 uti <- liste_membre
-uti <- uti[which(unique(as.character(uti)) != "Profil supprimé")]
+uti <- uti[which(unique(as.character(uti)) != "Profil supprimÃ©")]
 uti <- paste("http://club.doctissimo.fr/",uti,"/",sep="")
-uti <- gsub("é","e",uti, fixed = T)
-uti <- gsub("è","e",uti, fixed = T)
-uti <- gsub("ê","e",uti, fixed = T)
-uti <- gsub("ë","e",uti, fixed = T)
+uti <- gsub("Ã©","e",uti, fixed = T)
+uti <- gsub("Ã¨","e",uti, fixed = T)
+uti <- gsub("Ãª","e",uti, fixed = T)
+uti <- gsub("Ã«","e",uti, fixed = T)
 uti <- gsub(" ","-",uti,fixed = T)
 uti <- gsub("./","",uti,fixed = T)
 }
