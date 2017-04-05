@@ -101,12 +101,12 @@ rm(fb,ins,twi,tst_soc,fl_soc)
 content <- page %>% html_text()
 content <- as.character(content)
 try(content <- tolower(content))
-content <- gsub("é","e",content,fixed=T)
-content <- gsub("è","e",content,fixed=T)
-content <- gsub("ê","e",content,fixed=T)
-content <- gsub("à","a",content,fixed=T)
-content <- gsub("û","u",content,fixed=T)
-content <- gsub("ç","c",content,fixed=T)
+content <- gsub("Ã©","e",content,fixed=T)
+content <- gsub("Ã¨","e",content,fixed=T)
+content <- gsub("Ãª","e",content,fixed=T)
+content <- gsub("Ã ","a",content,fixed=T)
+content <- gsub("Ã»","u",content,fixed=T)
+content <- gsub("Ã§","c",content,fixed=T)
 
 ind <- length(gregexpr("cosmeti",content,fixed=T)[[1]])
 ind <- ind + length(gregexpr("creme",content,fixed=T)[[1]])
@@ -166,10 +166,10 @@ if(exists("fl_twi") & length(fl_twi)==1 ) {
   if(!is.na(fl_twi)) {
 library(twitteR)
 #to get your consumerKey and consumerSecret see the twitteR documentation for instructions
-consumer_key <- "x15MznTyTC9leJR9W9NB3vkV3"
-consumer_secret <- "IGKnNywt9hfpevtzv0ljZJb4jJjvZTjVhtY4kcHgVNLPOquhlU"
-access_token <- "119530363-6bkYUkXvJFjVcs5nbsNBrFX7KcFb3T8Glh6EqziD"
-access_secret <- "slNuLVeGkIMNBBWZKvotDovCL1SR7pwLLZAXGfVQcbnNI"
+consumer_key <- "*****"
+consumer_secret <- "*****"
+access_token <- "*****"
+access_secret <- "*****"
 try(setup_twitter_oauth(consumer_key,consumer_secret,access_token,access_secret),silent = T)
 user <- getUser(fl_twi)
 twi_loc <- user$location
