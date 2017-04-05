@@ -1,12 +1,12 @@
 library("RODBC")
 
-RPG <- odbcConnect(dsn = "PR01.RACPPRPG",uid = "UTLTINA",pwd = "UTLTINA")
+RPG <- odbcConnect(dsn = "*****",uid = "*****",pwd = "*****")
 
 query <- ("SELECT USERNAME FROM dba_users")
 
 users <-  as.character(sqlQuery(DWH,query)[,1])
 
-dsn <- "DWH_PROD2_HOLDING"
+dsn <- "*****"
 
 for ( utl in users){
 assign(paste0("USER_",utl),odbcConnect(dsn = dsn ,uid = utl,pwd = utl))
@@ -28,11 +28,11 @@ for ( i in 1:length(users)){
   Sys.sleep(0.5)
 }
 
-assign(paste0("USER_",users[i]),odbcConnect(dsn = "PR01.RACPPRPG",uid = "UTLMDM",pwd = "MDM"))
+assign(paste0("USER_",users[i]),odbcConnect(dsn = "*****",uid = "*****",pwd = "*****"))
 
 
-MDM <- odbcConnect(dsn = "PR01.RACPPRPG",uid = "UTLTINA",pwd = "UTLTINA")
-DWH <- odbcConnect(dsn = "DWH_PROD2_HOLDING",uid = "UTLTINA",pwd = "UTLTINA")
+MDM <- odbcConnect(dsn = "*****",uid = "*****",pwd = "*****")
+DWH <- odbcConnect(dsn = "*****",uid = "*****",pwd = "*****")
 
 
 query <- "update MDMDBO.T_MD_PF_CODE_LOCAL SET T_MD_PF_CODE_LOCAL.CDESIGNATION_CODE_LOCAL = 'AD PRIMALBA GEL LAV 500ML 7LA'
