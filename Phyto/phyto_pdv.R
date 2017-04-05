@@ -1,8 +1,8 @@
 #PHYTO
 library(rvest)
 library(RSelenium)
-Sys.setenv(https_proxy = "http://ottavig:Pierre-Fabre03@proxy1:8080")
-Sys.setenv(http_proxy = "http://ottavig:Pierre-Fabre03@proxy1:8080")
+Sys.setenv(https_proxy = "*****")
+Sys.setenv(http_proxy = "*****")
 url <- "https://www.phyto.fr/recherche-de-magasins.html"
 page <- read_html(url)
 link <- page %>% html_nodes("div ol li a") %>% html_attr("href")
@@ -10,7 +10,7 @@ link <- page %>% html_nodes("div ol li a") %>% html_attr("href")
 #SANS PROXY POUR UTILISER LE PHANTOMJS
 Sys.setenv(https_proxy = "")
 Sys.setenv(http_proxy = "")
-phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe",extra = "--proxy-auth=ottavig:Pierre-Fabre03 --proxy=proxy1:8080")
+phantom(pjs_cmd = "C:/Users/ottavig/Documents/phantomjs.exe",extra = "--proxy-auth=***** --proxy=*****")
 remDr <- remoteDriver(browserName = "phantomjs")
 remDr$open()
 
