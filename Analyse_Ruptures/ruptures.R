@@ -1,8 +1,8 @@
 #ANALYSE DES RUPTURES
 
 library(RODBC)
-dwh <- odbcConnect(dsn = "DWH_PROD2_HOLDING",uid = "UTLBOE",pwd = "BOEUTL")
-ref <- odbcConnect(dsn = "REF_PROD_COSMETO",uid = "ESBGUEST",pwd = "ESBGUEST")
+dwh <- odbcConnect(dsn = "*****",uid = "*****",pwd = "*****")
+ref <- odbcConnect(dsn = "*****",uid = "*****",pwd = "*****")
 
 query_1 <- "SELECT * 
 FROM D_RUPTURE_DWH"
