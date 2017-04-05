@@ -3,7 +3,7 @@ library(httr)
 library(RSelenium)
 library(rvest)
 
-prox <- use_proxy(url = "proxy1",port = 8080,username = "ottavig", password = "Pierre-Fabre02")
+prox <- use_proxy(url = "*****",port = "*****",username = "*****", password = "*****")
 agent <- user_agent("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)")
 
 q1 <- "https://www.google."
